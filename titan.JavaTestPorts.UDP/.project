@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>titan.JavaTestPorts.UDP</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.titan.designer.core.TITANJavaBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.pde.ManifestBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.pde.SchemaBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.titan.designer.core.TITANNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.pde.PluginNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/UDPasp_PortType.ttcn</name>
+			<type>1</type>
+			<location>/home/elnrnag/Ericsson/git/titan.TestPorts.UDPasp/src/UDPasp_PortType.ttcn</location>
+		</link>
+		<link>
+			<name>src/UDPasp_Types.ttcn</name>
+			<type>1</type>
+			<location>/home/elnrnag/Ericsson/git/titan.TestPorts.UDPasp/src/UDPasp_Types.ttcn</location>
+		</link>
+	</linkedResources>
+</projectDescription>

@@ -1,0 +1,46 @@
+This file describes how to use Titan UDP java testport from Eclipse Titan java project.
+
+Prerequisites:
+- Have this repository pulled to the target computer
+
+The following terminology will be used:
+<REPO_DIR> : The directory the titan.TestPorts.UDPasp repository is cloned
+<JAVA_PORT_DIR> : The directory containing the Eclipse project of the actual java implementation of the port. It's name is titan.JavaTestPorts.UDP and is located in the root of <REPO_DIR>.
+
+Step1:
+- In Eclipse open from the menu File -> Import...
+- Select "Existing Projects into Workspace"
+- In the chooser dialog navigate into <REPO_DIR> and choose <JAVA_PORT_DIR> as Root directory
+- Click "Finish" button. Now the Workspace must contain the titan.JavaTestPorts.UDP project. 
+
+Step2:
+- In the Eclipse Project Explorer open the titan.JavaTestPorts.UDP project
+- Right click on "src" directory
+- Choose New -> TTCN3 Module
+- Click on "Advanced >>" button at the bottom of the New TTCN3 Module window
+- Click on "Link to file in the file system"
+- Using the "Browse" button select <REPO_DIR>/src/UDPasp_PortType.ttcn
+- Click on "Finish" button
+
+Step3:
+- Repeat the steps of Step2 with the difference that the file chosen from <REPO_DIR>/src/UDPasp_Types.ttcn
+
+After completing these Steps the UDP java testport will be usable from other projects by adding it as Referenced project.
+
+Referencing the UDP java testport from other Titan java project:
+
+The following terminology will be used:
+<PROJECT> : The project in which the UDP java testport is to be used.  
+
+- Right click on <PROJECT> in Project Explorer
+- Select "Properties"
+- In the "Project Properties" window select "Project References" in the left side list
+- On the right make the checkbox of "titan.JavaTestPorts.UDP" selected
+- Select "Java Build Path" in the left list
+- Click "Add" button
+- Select the checkbox of "titan.JavaTestPorts.UDP" in the "Required Project Selection" window and click "OK"
+- Click "Apply and Close"
+
+After completing these steps the UDP test port is usable from <PROJECT>.
+
+Note: As per experience it may be required to close and rebuild <PROJECT> befor Eclipse realizes that it references the test port project!

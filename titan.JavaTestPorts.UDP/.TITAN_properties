@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TITAN_Designer_Properties>
+  <ActiveConfiguration>Default</ActiveConfiguration>
+  <ProjectProperties>
+    <MakefileSettings>
+      <targetExecutable>bin/titan.JavaTestPorts.UDP</targetExecutable>
+      <addSourceLineInfo>true</addSourceLineInfo>
+    </MakefileSettings>
+    <LocalBuildSettings>
+      <MakefileScript/>
+      <workingDirectory>java_src</workingDirectory>
+    </LocalBuildSettings>
+  </ProjectProperties>
+</TITAN_Designer_Properties>

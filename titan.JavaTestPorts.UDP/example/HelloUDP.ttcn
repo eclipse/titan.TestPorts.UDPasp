@@ -1,0 +1,52 @@
+module HelloUDP {
+
+import from UDPasp_PortType all;
+import from UDPasp_Types all;
+
+type component MyMTC
+{
+  port UDPasp_PT udpport_advanced;
+}
+
+
+
+
+testcase tc_UDP() runs on MyMTC system MyMTC
+{
+  map(mtc:udpport_advanced, system:udpport_advanced);
+
+  var ASP_UDP_open open := {"localhost", 2222, "localhost", 2222};
+  log(open);
+  udpport_advanced.send(open);
+  var ASP_UDP_open_result open_result;
+  udpport_advanced.receive(ASP_UDP_open_result:?) -> value open_result;
+  log("ELNRNAG");
+  log(open_result);
+
+  	
+  var ASP_UDP_message pdu := {'A1A2A3A4A5'O,omit,omit, open_result.id};
+  udpport_advanced.send(pdu);
+  
+  log(pdu);
+  log("SENT");
+  
+  var ASP_UDP_message inPdu;
+  udpport_advanced.receive(ASP_UDP_message:?) -> value inPdu;
+  
+  log("RECEIVED");
+  log(inPdu);
+  log("ELNRNAG1");
+  unmap(mtc:udpport_advanced, system:udpport_advanced);
+  log("ELNRNAG2");
+  setverdict(pass);
+  log("ELNRNAG3");
+}
+
+control
+{
+  execute(tc_UDP());
+  execute(tc_UDP());
+}
+
+
+}
